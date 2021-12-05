@@ -14,12 +14,14 @@ app.get('/', (req, res) => {
 
 // Productos Route
 app.get('/productos', (req, res) => {
-    res.sendFile(path.join(__dirname, './productos.txt'));
+    //res.sendFile(path.join(__dirname, './productos.txt'));
+    async function test(){
+        await todosLosProductos()
+    }
 })
 
 // ProductosRandom Route
 app.get('/productosRandom', (req, res) => {
-    //res.send(todosLosProductos())
     //res.sendFile(path.join(__dirname, '/productos.txt'));
     async function test(){
         await unProductoRandom()
