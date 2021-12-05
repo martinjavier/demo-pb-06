@@ -16,7 +16,7 @@ app.get('/', (req, res) => {
 app.get('/productos', (req, res) => {
     //res.sendFile(path.join(__dirname, './productos.txt'));
     async function test(){
-        await todosLosProductos()
+        return await todosLosProductos()
     }
 })
 
@@ -24,7 +24,7 @@ app.get('/productos', (req, res) => {
 app.get('/productosRandom', (req, res) => {
     //res.sendFile(path.join(__dirname, '/productos.txt'));
     async function test(){
-        await unProductoRandom()
+        return await unProductoRandom()
     }
     res.send(test())
 })
@@ -46,6 +46,8 @@ connectedServer.on('error', (error) => {
 async function todosLosProductos(){
     try {        
         const catalogo = await productos.getAll()
+        console.log("TODOS")
+        console.log(catalogo)
         return catalogo
     } catch (err) {
         console.log(err)
