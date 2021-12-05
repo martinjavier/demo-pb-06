@@ -13,17 +13,18 @@ app.get('/', (req, res) => {
 
 // Productos Route
 app.get('/productos', (req, res) => {
-    //res.sendFile(path.join(__dirname, '/productos.txt'));    
-    res.send((async () => {
-        await todosLosProductos()
-      })())
+    res.sendFile(path.join(__dirname, './productos.txt'));    
+
 })
 
 // ProductosRandom Route
 app.get('/productosRandom', (req, res) => {
     //res.send(todosLosProductos())
     //res.sendFile(path.join(__dirname, '/productos.txt'));
-
+    async function test(){
+        await todosLosProductos()
+    }
+    res.send(test())
 })
 
 // Fecha y Hora Route

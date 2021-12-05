@@ -1,38 +1,38 @@
 [
-    {
-      "title": "Escuadra",
-      "price": 323.45,
-      "thumbnail": "./escuadra.png",
-      "id": 1
-    },
-    {
-      "title": "Calculadora",
-      "price": 234.56,
-      "thumbnail": "./calculadora.png",
-      "id": 2
-    },
-    {
-      "title": "Globo Terráqueo",
-      "price": 45.67,
-      "thumbnail": "./globoterraqueo.png",
-      "id": 3
-    },
-    {
-      "title": "Paleta Pintura",
-      "price": 456.78,
-      "thumbnail": "./paletapintura.png",
-      "id": 4
-    },
-    {
-      "title": "Reloj Reloj Reloj",
-      "price": 67.89,
-      "thumbnail": "./reloj.png",
-      "id": 5
-    },
-    {
-      "title": "Agenda Agenda",
-      "price": 78.9,
-      "thumbnail": "./agenda.png",
-      "id": 6
-    }
-  ]
+  {
+    "title": "Escuadra",
+    "price": 323.45,
+    "thumbnail": "./escuadra.png",
+    "id": 1
+  },
+  {
+    "title": "Calculadora",
+    "price": 234.56,
+    "thumbnail": "./calculadora.png",
+    "id": 2
+  },
+  {
+    "title": "Globo Terráqueo",
+    "price": 45.67,
+    "thumbnail": "./globoterraqueo.png",
+    "id": 3
+  },
+  {
+    "title": "Paleta Pintura",
+    "price": 456.78,
+    "thumbnail": "./paletapintura.png",
+    "id": 4
+  },
+  {
+    "title": "Reloj Reloj Reloj",
+    "price": 67.89,
+    "thumbnail": "./reloj.png",
+    "id": 5
+  },
+  {
+    "title": "Agenda Agenda",
+    "price": 78.9,
+    "thumbnail": "./agenda.png",
+    "id": 6
+  }
+]
