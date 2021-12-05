@@ -1,6 +1,7 @@
 const express = require('express')
 const path = require('path');
 const Contenedor = require("./contenedor.js")
+const productos = new Contenedor("./productos.txt")
 
 const app = express()
 
@@ -13,8 +14,7 @@ app.get('/', (req, res) => {
 
 // Productos Route
 app.get('/productos', (req, res) => {
-    res.sendFile(path.join(__dirname, './productos.txt'));    
-
+    res.sendFile(path.join(__dirname, './productos.txt'));
 })
 
 // ProductosRandom Route
@@ -22,7 +22,7 @@ app.get('/productosRandom', (req, res) => {
     //res.send(todosLosProductos())
     //res.sendFile(path.join(__dirname, '/productos.txt'));
     async function test(){
-        await todosLosProductos()
+        await unProductoRandom()
     }
     res.send(test())
 })
@@ -43,9 +43,30 @@ connectedServer.on('error', (error) => {
 
 async function todosLosProductos(){
     try {
-        const productos = new Contenedor("./productos.txt")
+        
         const catalogo = await productos.getAll()
         return catalogo
+    } catch (err) {
+        console.log(err)
+    }
+}
+
+async function soloUnProducto(id){
+    try{
+        const productoBuscado = await productos.getById(id) 
+        return productoBuscado
+    } catch (err) {
+        console.log(err)
+    }
+}
+
+async function unProductoRandom(){
+    try{
+        const min = 1
+        const max = 6
+        const id = Math.floor(Math.random() * (max - min) ) + min;
+        const productoBuscado = await productos.getById(id) 
+        return productoBuscado
     } catch (err) {
         console.log(err)
     }
