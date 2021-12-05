@@ -42,8 +42,7 @@ connectedServer.on('error', (error) => {
 })
 
 async function todosLosProductos(){
-    try {
-        
+    try {        
         const catalogo = await productos.getAll()
         return catalogo
     } catch (err) {
