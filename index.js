@@ -1,8 +1,8 @@
 const express = require('express')
 const path = require('path');
-const Contenedor = require("./contenedor.js")
+const Contenedor = require("./contenedor")
 //const productos = new Contenedor("./productos.txt")
-const Archivo =  require("./archivo.js")
+const Archivo =  require("./archivo")
 const productos = new Archivo("./productos.txt")
 
 const app = express()
@@ -16,15 +16,7 @@ app.get('/', (req, res) => {
 
 // Productos Route
 app.get('/productos', (req, res) => {
-    //res.sendFile(path.join(__dirname, './productos.txt'));
-    const leerArchivo = new Archivo('./productos.txt');
-    //console.log("Todos los productos")
-    //console.log(leerArchivo.leer())
-    //res.send(leerArchivo.leer())
-    async function lectura(){
-        return await leerArchivo.leer()
-    }
-    res.send(lectura())
+    res.sendFile(path.join(__dirname, './productos.txt'));
 })
 
 // ProductosRandom Route
