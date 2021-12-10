@@ -1,9 +1,8 @@
 const express = require('express')
 const path = require('path');
 const Contenedor = require("./contenedor")
-//const productos = new Contenedor("./productos.txt")
+const productos = new Contenedor("./productos.txt")
 const Archivo =  require("./archivo")
-const productos = new Archivo("./productos.txt")
 
 const app = express()
 
@@ -20,12 +19,9 @@ app.get('/productos', (req, res) => {
 })
 
 // ProductosRandom Route
-app.get('/productosRandom', (req, res) => {
-    //res.sendFile(path.join(__dirname, '/productos.txt'));
-    async function test(){
-        return await unProductoRandom()
-    }
-    res.send(test())
+app.get('/productosRandom', async (req, res) => {
+    const producto = await unProductoRandom();
+    return res.send(producto);
 })
 
 // Fecha y Hora Route
